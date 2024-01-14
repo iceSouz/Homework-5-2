@@ -1,21 +1,15 @@
 package space;
 
 import java.util.Arrays;
-import java.util.Random;
 
 public class ShuttleNumbers {
     public static final int NUMBER_SPACE_SHUTTLES = 100;
     public static final int[] UNLUCKY_DIGITS = new int[] {4, 9};
-    public static final int LOWER_NUMBER = 1;
-    public static final int UPPER_NUMBER = 200;
 
     public static void main(String[] args) {
         int[] shuttleNumbers = new int[NUMBER_SPACE_SHUTTLES];
-        Random random = new Random();
 
-        for (int i = 0; i < NUMBER_SPACE_SHUTTLES; i++) {
-            int number = random.nextInt(UPPER_NUMBER - LOWER_NUMBER) + LOWER_NUMBER;
-
+        for (int i = 0, number = 1; i < NUMBER_SPACE_SHUTTLES; i++, number++) {
             if (isContainsUnluckyNumber(number)) {
                 i--;
                 continue;
